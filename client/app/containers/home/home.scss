@@ -1,0 +1,49 @@
+.centerbuttons {
+    width: 100%;
+    text-align: center;
+    margin: 13px 0 13px 0;
+}
+
+.centerbuttons button {
+    min-width: 100px;
+}
+
+.active {
+    background: #d9534f;
+}
+
+.completed {
+    background: #5cb85c;
+}
+
+.list-unstyled li {
+    padding: 2px 10px 2px 10px;
+    border: 1px solid white;
+}
+
+.list-unstyled label {
+    font-size: 15px;
+}
+
+.deleteButton {
+    float: right;
+    margin-right: 20px;
+    font-size: 20px !important;
+}
+
+.removediv {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nomargin-left {
+    margin-left: 10px !important;
+}
+
+.nomargin-right {
+    margin-right: 0;
+}
+
+.tododiv {
+    cursor: pointer;
+}

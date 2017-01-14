@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+            <h1>Todo list</h1>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Add Todo" ng-model="$ctrl.todo">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" 
+                    ng-disabled="!$ctrl.todo" ng-click="$ctrl.submitTodo($ctrl.todo)">ADD</button>
+                  </span>
+            </div>
+            <div class="input-group centerbuttons">
+                <div class="btn-group text-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary btn-info" data-type="all" ng-click="$ctrl.filterTodo($event)">All</button>
+                    <button type="button" class="btn btn-secondary btn-danger" data-type="active" ng-click="$ctrl.filterTodo($event)">Active</button>
+                    <button type="button" class="btn btn-secondary btn-success" data-type="completed" ng-click="$ctrl.filterTodo($event)">Completed</button>
+                </div>
+            </div>
+            <!-- /input-group -->
+            <hr>
+            <ul class="list-unstyled">
+                <li class="ui-state-default" ng-class="todo.Status[0] == 'completed'?'completed':'active'" ng-repeat="todo in $ctrl.todos" ng-hide="todo.Type == 'SystemFolder'">
+                    <div class="row nomargin-left">
+                        <div class="col-xs-10 tododiv" ng-click="$ctrl.success(todo,$event)">
+                            <div class="checkbox">
+                                <input type="checkbox" ng-model="todo.Status[0]" ng-true-value="'completed'" ng-false-value="'active'"> {{todo.DisplayName}}
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="removediv">
+                                <i class="fa fa-times removeicon deleteButton" aria-hidden="true" ng-click="$ctrl.remove(todo)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
