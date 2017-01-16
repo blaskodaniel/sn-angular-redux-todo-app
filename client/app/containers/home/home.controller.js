@@ -9,7 +9,7 @@ class HomeController {
     collection = new SN.Collection([]);
     ROOT_URL = '/workspaces/Project/budapestprojectworkspace/Tasks';
     optionObj = new ODataApi.ODataParams({
-        select: ['DisplayName', 'Status'],
+        select: ['DisplayName', 'Status', 'Type', 'Id'],
         orderby: 'DisplayName'
     });
 
@@ -25,8 +25,8 @@ class HomeController {
     }
 
     filterTodo($event) {
-        //console.log($event.currentTarget.getAttribute("data-type"));
         let filter = $event.currentTarget.getAttribute("data-type");
+        this.optionObj['select'] = ['DisplayName', 'Status', 'Type', 'Id'];
         if (filter === 'active') {
             this.optionObj['filter'] = `isOf('Task') and Status eq %27Active%27`;
         } else if (filter === 'completed') {
@@ -56,6 +56,7 @@ class HomeController {
             Type: 'Task',
             DisplayName: this.todo
         });
+        content.Status = 'active';
 
         this.state.dispatch(Actions.CreateContent(this.ROOT_URL, content))
         this.addTodo(this.todo);

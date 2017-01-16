@@ -52,7 +52,6 @@ angular
         const loggerMiddleware = (createLogger)();
         let middlewareArray = [epicMiddleware, loggerMiddleware];
 
-        //const store = Store.configureStore(myReducer);
         $ngReduxProvider.createStoreWith(myReducer, middlewareArray);
     })
     .component('app', AppComponent);
