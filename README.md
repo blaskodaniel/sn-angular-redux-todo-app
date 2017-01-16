@@ -13,6 +13,7 @@ $ git clone https://github.com/blaskodaniel/sn-angular-redux-todo-app.git
 $ cd sn-angular-redux-todo-app
 $ npm install
 $ npm start
+Browser: localhost:3000
 ```
 
 Based on the https://github.com/angularclass/NG6-starter.git starter boilerplate.
